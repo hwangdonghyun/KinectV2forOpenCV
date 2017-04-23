@@ -1,3 +1,10 @@
+/**
+* @mainpage KinectCV 0.1\n
+* @brief Wrapping Kinect SDK library for OpenCV\n
+* @details This is a library for OpenCV to control kinect V2.\n
+Made by D.H. Hwang.\n
+*/
+
 #pragma once
 #include <Kinect.h>
 #include <opencv2\opencv.hpp>

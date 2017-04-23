@@ -5,6 +5,7 @@
 
 using namespace cv;
 
+
 template <class T> 
 void SafeRelease(T **ppT)
 {
@@ -22,11 +23,14 @@ int main(void)
 	while (1)
 	{
 		Mat colorImage = kcv.GetColorImage();
-		//Mat depthImage = kcv.GetDepthImage();
+		Mat depthImage = kcv.GetDepthImage();
 		
 		imshow("color", colorImage);
-		//imshow("depth", depthImage);
+		imshow("depth", depthImage);
 		if (cvWaitKey(30) > 0)
 			break;
 	}
+
+	
+	
 }

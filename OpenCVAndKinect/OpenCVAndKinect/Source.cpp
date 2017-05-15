@@ -18,19 +18,20 @@ void SafeRelease(T **ppT)
 
 int main(void)
 {
-	KinectCV kcv;
-	kcv.OpenKinectDevice();
+	KinectCV kcv(OPEN_COLOR | OPEN_DEPTH | OPEN_BODYINDEX | OPEN_BODYPARTS);
+
 	while (1)
 	{
+		//Mat indexImage = kcv.GetBodyIndex();
 		Mat colorImage = kcv.GetColorImage();
-		Mat depthImage = kcv.GetDepthImage();
-		
-		imshow("color", colorImage);
-		imshow("depth", depthImage);
-		if (cvWaitKey(30) > 0)
+		//Mat depthImage = kcv.GetDepthImage();
+		Mat partsImage = kcv.GetBodyParts2();
+
+	//	imshow("color", colorImage);
+	//imshow("depth", depthImage);
+	//	imshow("body", indexImage);
+		imshow("index", partsImage);
+		if (cvWaitKey(1) > 0)
 			break;
 	}
-
-	
-	
 }
